@@ -1,5 +1,22 @@
 # License Finder
 
+Hi there,
+
+This version is a fork of pivotal/LicenseFinder repository, maintained by frog.co developers, in order to go forward with many PR that are still not merged to the former repository.
+Notably, 3 changes were introduced : 
+
+ - support for Cocoapods multi-targets by allowing to choose which Acknowledgment.plist to use through the ACKNOWLEDGEMENTS_PATH environment variable
+ - support for flutter projects by supporting pub package manager
+ - support for SPDX identifiers in order to use this tool with other 3rd parties & CI tools.
+
+If you find those changes useful, please add a comment or react to the following PR's in order to get them merged to the former repository (we don't plan to maintain repositories ourselves, more to contribute to existing ones).
+ - https://github.com/pivotal/LicenseFinder/pull/873
+ - https://github.com/pivotal/LicenseFinder/pull/875
+ - https://github.com/pivotal/LicenseFinder/pull/876
+ 
+The frog developer team
+___
+
 [![Code Climate](https://codeclimate.com/github/pivotal/LicenseFinder.png)](https://codeclimate.com/github/pivotal/LicenseFinder)
 
 Build status
@@ -72,19 +89,16 @@ then:
 $ brew install ruby
 ```
 
-The easiest way to use `license_finder` is to install it as a command
+In order to use this forked version of `license_finder` man needs to build the gem locally through command
 line tool, like brew, awk, gem or bundler:
 
 ```sh
-$ gem install license_finder
+$ git clone https://github.com/etiennecadicidean/LicenseFinder
+$ gem build 
+$ gem install license_finder-6.15.1.gem
+
 ```
 
-Though it's less preferable, if you are using bundler in a Ruby
-project, you can add `license_finder` to your Gemfile:
-
-```ruby
-gem 'license_finder', :group => :development
-```
 
 This approach helps you remember to install `license_finder`, but can
 pull in unwanted dependencies, including `bundler`. To mitigate this
